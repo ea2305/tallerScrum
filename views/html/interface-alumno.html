@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alumnos</title>
+	<link rel="stylesheet" href="/stylesheets/estilo.css">
+
+	<script language="javascript">
+	function marcado(){
+		if (document.form.click.checked) {
+			document.form.submit(); 
+	    } else {
+			alert("Debes aceptar los términos y condiciones");
+			document.form.click.focus();
+		    return false; 
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="estilo">
+			<div>				<!-- 1 -->
+				<h2 class="center">Politicas</h2>
+				<div class="estilo2 politicas">
+					<form action="" method="POST" name="form" onsubmit="return marcado();">
+						<p>weas que le dira </p>
+						<input type="checkbox" name="click" id="click"> Aceptar las politicas. <br>
+						<input type="submit" value="Enviar" class="enviar"> 
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="notificaciones estilo">
+			<div>				<!-- 2 -->
+				<h2 class="center">Notificaciones</h2>
+				<div class="estilo2 notificaciones">
+					weas que se notificara
+				</div>
+				<div class="estilo2 notificaciones">
+					mas weas
+				</div>
+				<div class="estilo2 notificaciones">
+					super weas
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

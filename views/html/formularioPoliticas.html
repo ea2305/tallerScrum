@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario Politica</title>
+  </head>
+
+  <style media="screen">
+    form {
+      background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+      background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+      background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+      margin: auto;
+      position: relative;
+      width: 550px;
+      height: 550px;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 24px;
+      font-weight: bold;
+      color: #09C;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #999;
+      border: inset 1px solid #333;
+      -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    }
+    input, textarea {
+        width: 100%;
+    }
+    input[type=text], textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+    input[type=text], textarea {
+        background-color: #ccc;
+    }
+    input[type=file] {
+        background-color: white;
+        color: black;
+        border: 2px solid #09C;
+    }
+  </style>
+
+  <body>
+
+    <form id="usrform" action="index.html" method="post">
+      <p>Nombre Profesor:</p>
+      <input type="text" name="nombreProfesor" value="" required>
+      <p>Titulo: </p>
+      <input type="text" name="titulo" value="" required>
+      <input class="button" id="fileInput" type="file" name="politica2" value="" accept="text/plain" required>
+      <div>*Llenar Poltica</div>
+      <input type="submit" name="enviar" value="envar" onselect='openFile(event)' required>
+      <p>Poltica: </p>
+      <textarea id="fileDisplayArea" name="politica" form="usrform"  rows="10" cols="40"></textarea>
+    </form>
+
+<script>
+  window.onload = function() {
+    var fileInput = document.getElementById('fileInput');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+      var file = fileInput.files[0];
+      var textType = /text.*/;
+
+      if (file.type.match(textType)) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          fileDisplayArea.innerText = reader.result;
+        }
+
+        reader.readAsText(file);
+      } else {
+        fileDisplayArea.innerText = "File not supported!"
+      }
+    });
+  }
+</script>
+
+
+  </body>
+</html>

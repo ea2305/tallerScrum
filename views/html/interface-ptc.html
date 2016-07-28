@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Profesion de tiempo completo</title>
+	<link rel="stylesheet" href="/stylesheets/estiloptc.css">
+	<script src="/javascripts/jquery.js"></script>
+
+</head>
+<body>
+	<div class="contenedor">
+		<img src="/images/up.jpg" class="tamimg">
+		<div class="barrainicio">
+			<!-- Podemos incluir el nombre del profesor -->
+			<p>Nombre del profesor
+				<!-- aca va el link a donde lo va redireccionar -->
+				<button class="buttonInicio" onclick="window.location.href ='https:\\www.upchiapas.edu.mx'">
+					Redirección 
+				</button>
+			</p>
+		</div>
+
+		<div class="estilo">
+			<div id="target">				<!-- 1 -->
+				<h2 class="center">Politicas</h2>
+
+				<!--div class="estilo2 politicas">
+					
+					<h4>Nombre de la politica</h4>
+					
+					<p>Descriion de la politica	Validación. La principal utilidad de JavaScript en el manejo de los formularios es la validación de los datos introducidos por los usuarios. Antes de enviar un ...</p>
+					<div class="boxpor">
+						
+						<form action="/db/getresult" method="POST">
+							<input type="button" onclick="" value="Ver resultados">
+						</form>
+					</div>				
+				</div-->
+
+				
+			</div>
+		</div>
+		<div class="notificaciones estilo">
+			<div>				<!-- 2 -->
+				<h2 class="center">Notificaciones</h2>
+				<div class="estilo2 notificaciones">
+					weas que se notificara
+				</div>
+				<div class="estilo2 notificaciones">
+					mas weas
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+
+		$.ajax({
+			url : "/db/getPoliticas",
+			type : "POST",
+			success : function(e){
+				console.log(" :v ");
+				console.log( e );
+			}
+		})
+
+	</script>	
+</body>
+</html>
