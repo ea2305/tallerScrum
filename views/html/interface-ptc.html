@@ -61,8 +61,7 @@
 			url : "/db/getPoliticas",
 			type : "POST",
 			success : function(e){
-				console.log(" :v ");
-				console.log( e );
+				$( "#target" ).append( "<div class='estilo2 politicas'><h4>" + e[0].titulo + "</h4><p> " + e[0].politica + "</p><div class='boxpor'><form action='/db/getResult' method='POST'><input type='submit' value='Ver resultados'></form></div></div-->");
 			}
 		})
 

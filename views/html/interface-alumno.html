@@ -6,14 +6,24 @@
 	<link rel="stylesheet" href="/stylesheets/estilo.css">
 
 	<script language="javascript">
+	// function marcado(){
+	// 	if (document.form.click.checked) {
+	// 		document.form.submit();
+	//     } else {
+	// 		alert("Debes aceptar los términos y condiciones");
+	// 		document.form.click.focus();
+	// 	    return false; 
+	// 	}
+	// }
 	function marcado(){
-		if (document.form.click.checked) {
-			document.form.submit(); 
-	    } else {
-			alert("Debes aceptar los términos y condiciones");
-			document.form.click.focus();
-		    return false; 
-		}
+	    if(document.getElementById("click1").checked)
+            return true;
+	    else if(document.getElementById("click2").checked)
+	    	return true;
+	    else {
+            alert("Debes de selccionar algun termino.");
+            return false;
+	    }
 	}
 </script>
 </head>
@@ -25,7 +35,8 @@
 				<div class="estilo2 politicas">
 					<form action="" method="POST" name="form" onsubmit="return marcado();">
 						<p>weas que le dira </p>
-						<input type="checkbox" name="click" id="click"> Aceptar las politicas. <br>
+						<input type="radio" name="click" id="click1" value="A"> Aceptar las politicas.
+						<input type="radio" name="click" id="click2" value="R"> Rechazar las politicas<br>
 						<input type="submit" value="Enviar" class="enviar"> 
 					</form>
 				</div>
