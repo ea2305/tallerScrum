@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>datos</title>
-    <script src="javascripts/jquery.js" charset="utf-8"></script>
+    <script src="/javascripts/jquery.js"></script>
     <style media="screen">
       .DataPolitica {
         background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
@@ -56,7 +56,7 @@
 
       window.onload = function() {
         $.ajax({url: "/db/getPoliticaResult", success: function(result){
-            actualizarData(result);
+            actualizarData(result[0]);
         }});
       }
 

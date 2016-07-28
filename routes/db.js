@@ -106,7 +106,7 @@ router.post('/getPoliticas', function(req, res, next) {
 });
 
 //Obtenemos las politicas
-router.get('/getResult', function(req, res, next) {
+router.post('/getResult', function(req, res, next) {
 	res.render('datos');
 });
 
