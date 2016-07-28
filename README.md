@@ -1,0 +1,4 @@
+# Installation Node :)
+```
+npm install
+```
